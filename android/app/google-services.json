@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1026403415219",
+    "project_id": "cineverse-25579",
+    "storage_bucket": "cineverse-25579.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026403415219:android:186835d6c02fd78c70acc6",
+        "android_client_info": {
+          "package_name": "com.example.cineverse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0U8FOBh8qmwqhtmVuM9YJ-6zB-B0KyFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
