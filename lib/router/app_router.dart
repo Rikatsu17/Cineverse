@@ -5,12 +5,15 @@ import '../models/movie.dart';
 import '../screens/details/movie_details_screen.dart';
 import '../home.dart';
 
+import '../screens/chat/chat_screen.dart';
+
+import '../screens/auth/auth_gate.dart';
 final appRouter = GoRouter(
   routes: [
     GoRoute(
       path: '/',
       builder: (context, state) =>
-      const Home(),
+      const AuthGate(),
     ),
 
     GoRoute(
@@ -24,6 +27,12 @@ final appRouter = GoRouter(
           movie: movie,
         );
       },
+    ),
+    GoRoute(
+      path: '/chat',
+
+      builder: (context, state) =>
+      const ChatScreen(),
     ),
   ],
 );

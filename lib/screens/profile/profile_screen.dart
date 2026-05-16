@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../providers/theme_provider.dart';
 
+import '../../providers/auth_provider.dart';
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
 
@@ -39,6 +41,7 @@ class ProfileScreen extends ConsumerWidget {
                   .surfaceContainerHighest,
             ),
 
+
             child: Column(
               children: [
                 const CircleAvatar(
@@ -51,22 +54,40 @@ class ProfileScreen extends ConsumerWidget {
 
                 const SizedBox(height: 16),
 
-                const Text(
-                  'Movie Explorer',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight:
-                    FontWeight.bold,
+                Text(
+                  ref
+                      .read(authServiceProvider)
+                      .currentUser
+                      ?.email ??
+                      'No Email',
+
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
+
+                  textAlign: TextAlign.center,
                 ),
 
-                const SizedBox(height: 8),
+                const SizedBox(height: 24),
 
-                Text(
-                  'Track your favorite movies',
-                  style: TextStyle(
-                    color:
-                    Colors.grey.shade600,
+                Align(
+                  alignment: Alignment.centerLeft,
+
+                  child: TextButton.icon(
+                    onPressed: () async {
+                      await ref
+                          .read(authServiceProvider)
+                          .signOut();
+                    },
+
+                    icon: const Icon(
+                      Icons.logout,
+                    ),
+
+                    label: const Text(
+                      'Logout',
+                    ),
                   ),
                 ),
               ],
@@ -93,6 +114,23 @@ class ProfileScreen extends ConsumerWidget {
             title: const Text(
               'Dark Mode',
             ),
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.chat,
+            ),
+
+            title: const Text(
+              'Movie Chat',
+            ),
+
+            trailing: const Icon(
+              Icons.arrow_forward_ios,
+            ),
+
+            onTap: () {
+              context.push('/chat');
+            },
           ),
         ],
       ),

@@ -20,24 +20,24 @@ class HomeScreen extends ConsumerWidget {
     final moviesAsync = ref.watch(trendingMoviesProvider);
     final activities = [
       {
-        'activity': 'Alex watched Interstellar',
+        'activity': 'Alikhan watched the movie iron man',
         'time': '10 mins ago',
       },
       {
-        'activity': 'Maria added Dune',
+        'activity': 'Yerulan liked the serial the boys',
         'time': '1 hour ago',
       },
       {
-        'activity': 'John liked Batman',
+        'activity': "Asqar's favorite movie is forest gump",
         'time': '2 hours ago',
       },
     ];
 
     final categoryImages = [
       {'title': 'Action', 'image': 'assets/categories/action.jfif'},
-      {'title': 'Anime', 'image': 'assets/categories/anime.jfif'},
       {'title': 'Comedy', 'image': 'assets/categories/comedy.jfif'},
       {'title': 'Drama', 'image': 'assets/categories/drama.jfif'},
+      {'title': 'Anime', 'image': 'assets/categories/anime.jfif'},
       {'title': 'Horror', 'image': 'assets/categories/horror.jfif'},
       {'title': 'Sci-Fi', 'image': 'assets/categories/sci-fi.jfif'},
     ];
