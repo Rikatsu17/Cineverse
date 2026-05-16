@@ -60,7 +60,9 @@ class HomeScreen extends ConsumerWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.push('/notifications');
+            },
             icon: const Icon(Icons.notifications_none),
           ),
         ],

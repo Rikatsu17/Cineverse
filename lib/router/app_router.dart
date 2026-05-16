@@ -8,6 +8,7 @@ import '../home.dart';
 import '../screens/chat/chat_screen.dart';
 
 import '../screens/auth/auth_gate.dart';
+import '../screens/notification/notifications_screen.dart';
 final appRouter = GoRouter(
   routes: [
     GoRoute(
@@ -33,6 +34,10 @@ final appRouter = GoRouter(
 
       builder: (context, state) =>
       const ChatScreen(),
+    ),
+    GoRoute(
+      path: '/notifications',
+      builder: (context, state) => const NotificationsScreen(),
     ),
   ],
 );
