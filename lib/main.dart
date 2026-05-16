@@ -3,7 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'home.dart';
+import 'providers/theme_provider.dart';
 
+import 'router/app_router.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -22,25 +24,24 @@ class CineVerseApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+
       title: 'CineVerse',
 
       theme: ThemeData(
-        brightness: Brightness.light,
         useMaterial3: true,
         colorSchemeSeed: Colors.red,
       ),
 
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
+      darkTheme: ThemeData.dark(
         useMaterial3: true,
-        colorSchemeSeed: Colors.red,
       ),
 
-      themeMode: ThemeMode.system,
+      themeMode:
+      ref.watch(themeProvider),
 
-      home: const Home(),
+      routerConfig: appRouter,
     );
   }
 }

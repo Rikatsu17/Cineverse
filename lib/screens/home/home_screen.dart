@@ -10,6 +10,8 @@ import '../../components/activity_card.dart';
 import '../../components/category_card.dart';
 
 import '../details/movie_details_screen.dart';
+
+import 'package:go_router/go_router.dart';
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
@@ -32,21 +34,12 @@ class HomeScreen extends ConsumerWidget {
     ];
 
     final categoryImages = [
-      {
-        'title': 'Action',
-        'image':
-        'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba',
-      },
-      {
-        'title': 'Sci-Fi',
-        'image':
-        'https://images.unsplash.com/photo-1440404653325-ab127d49abc1',
-      },
-      {
-        'title': 'Anime',
-        'image':
-        'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c',
-      },
+      {'title': 'Action', 'image': 'assets/categories/action.jfif'},
+      {'title': 'Anime', 'image': 'assets/categories/anime.jfif'},
+      {'title': 'Comedy', 'image': 'assets/categories/comedy.jfif'},
+      {'title': 'Drama', 'image': 'assets/categories/drama.jfif'},
+      {'title': 'Horror', 'image': 'assets/categories/horror.jfif'},
+      {'title': 'Sci-Fi', 'image': 'assets/categories/sci-fi.jfif'},
     ];
     final categories = [
       'Action',
@@ -101,14 +94,9 @@ class HomeScreen extends ConsumerWidget {
                         title: movie.title,
                         rating: movie.voteAverage,
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) =>
-                                  MovieDetailsScreen(
-                                    movie: movie,
-                                  ),
-                            ),
+                          context.push(
+                            '/details',
+                            extra: movie,
                           );
                         },
                       );
