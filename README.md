@@ -23,6 +23,10 @@ The primary objective of CineVerse is to provide users with an interactive and p
 
 ---
 
+## Demo Video
+Brief video demonstration of the project
+(demo/cineverse-demovideo.mkv)
+
 # Features
 
 - User authentication with Firebase Authentication
